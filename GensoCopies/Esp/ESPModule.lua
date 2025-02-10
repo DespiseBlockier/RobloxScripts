@@ -330,6 +330,7 @@ end
 
 function ESPModule:Enable()
     for _, player in ipairs(Players:GetPlayers()) do
+        print(player.name)
         AddToESP(player)
     end
 
@@ -355,7 +356,6 @@ function ESPModule:Disable()
     end
 
     for _, PL in pairs(cache) do
-        PL:Remove()
         PL = nil
     end
 end
