@@ -49,6 +49,11 @@ local bones = {
 }
 
 --// Settings
+
+local ESPModule = {}
+
+local ESPTable = {}
+
 local ESP_SETTINGS = {
     BoxOutlineColor = Color3.new(0, 0, 0),
     BoxColor = Color3.new(1, 1, 1),
