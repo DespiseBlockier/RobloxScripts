@@ -21,6 +21,15 @@ local Ray = Ray
 local Drawing = Drawing
 ]]
 
+if not Drawing or not Drawing.new or not Drawing.Fonts then
+    warn("No Drawing Libary")
+	loadstring(game.HttpGet(game, "https://pastebin.com/raw/huyiRsK0"))()
+
+	repeat
+		wait(0)
+	until Drawing and Drawing.new and type(Drawing.new) == "function" and Drawing.Fonts and type(Drawing.Fonts) == "table"
+end
+
 --// Settings
 local ESP_SETTINGS = {
     BoxOutlineColor = Color3.new(0, 0, 0),
@@ -324,6 +333,7 @@ end
 
 local function AddToESP(player)
     if player ~= localPlayer then
+        print("Drawing: "..player.name)
         createEsp(player)
     end
 end
