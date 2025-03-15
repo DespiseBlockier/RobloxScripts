@@ -712,14 +712,17 @@ end
 
 function EspInterface.getCharacter(player)
     local PlayerName = player.Name
-    for _, v in pairs (game.workspace:GetChildren())do
+    for _, v in pairs (game.workspace:GetChildren()) do
+        print(v.Name)
         if v.Name == PlayerName then
+            print("Found a player by name")
             print"hi"
             if v:FindFirstChild("PlayerProximityPrompt") then
-	            return player.Character;
+	            return v;
             end
         end
     end
+    return player.Character;
 end
 
 function EspInterface.getHealth(player)
@@ -730,5 +733,6 @@ function EspInterface.getHealth(player)
 	end
 	return 100, 100;
 end
-print("Version2")
+
+print("Version 3")
 return EspInterface;
