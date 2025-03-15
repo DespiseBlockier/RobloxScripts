@@ -20,6 +20,7 @@ local unpack = table.unpack;
 local find = table.find;
 local create = table.create;
 local fromMatrix = CFrame.fromMatrix;
+local Rayfield = game:GetService("CoreGui").HiddenUI.Rayfield or nil
 
 -- methods
 local wtvp = camera.WorldToViewportPoint;
@@ -192,6 +193,7 @@ function EspObject:Destruct()
 
 	clear(self);
 end
+
 
 function EspObject:Update()
 	local interface = self.interface;
@@ -717,7 +719,7 @@ function EspInterface.getCharacter(player)
             if v:FindFirstChild("PlayerProximityPrompt") then
 	            return v;
             else
-                v.Name = PlayerName .. "NotIt"
+
             end
         end
     end
@@ -732,6 +734,18 @@ function EspInterface.getHealth(player)
 	end
 	return 100, 100;
 end
+
+task.spawn(function ()
+    while true do task.wait(1)
+        if Rayfield ~= nil then
+            if Rayfield.Name == "Rayfield" then
+
+            else
+                EspInterface.Unload()
+            end
+        end
+    end
+end)
 
 print("Version 4")
 return EspInterface;
