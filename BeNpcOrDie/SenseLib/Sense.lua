@@ -711,7 +711,15 @@ function EspInterface.getTeamColor(player)
 end
 
 function EspInterface.getCharacter(player)
-	return player.Character;
+    local PlayerName = player.Name
+    for _, v in pairs (game.workspace:GetChildren())do
+        if v.Name == PlayerName then
+            print"hi"
+            if v:FindFirstChild("PlayerProximityPrompt") then
+	            return player.Character;
+            end
+        end
+    end
 end
 
 function EspInterface.getHealth(player)
@@ -722,5 +730,5 @@ function EspInterface.getHealth(player)
 	end
 	return 100, 100;
 end
-
+print("Version2")
 return EspInterface;
