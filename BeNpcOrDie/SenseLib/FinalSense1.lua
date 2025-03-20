@@ -20,7 +20,14 @@ local unpack = table.unpack;
 local find = table.find;
 local create = table.create;
 local fromMatrix = CFrame.fromMatrix;
-local Rayfield = game:GetService("CoreGui").HiddenUI.Rayfield or nil
+local EnviromnetCoreUi
+for i,v in pairs(game:GetService("CoreGui"):GetChildren()) do
+    if v:FindFirstChild("Rayfield") then
+        EnviromnetCoreUi = v
+    end
+end
+local Rayfield = EnviromnetCoreUi.Rayfield or nil
+
 
 -- methods
 local wtvp = camera.WorldToViewportPoint;
