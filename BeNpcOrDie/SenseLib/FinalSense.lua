@@ -548,8 +548,8 @@ local EspInterface = {
 	},
 	teamSettings = {
 		enemy = {
-			enabled = false,
-			box = false,
+			enabled = true,
+			box = true,
 			boxColor = { Color3.new(1,0,0), 1 },
 			boxOutline = true,
 			boxOutlineColor = { Color3.new(), 1 },
@@ -595,8 +595,8 @@ local EspInterface = {
 			chamsOutlineColor = { Color3.new(1,0,0), 0 },
 		},
 		friendly = {
-			enabled = false,
-			box = false,
+			enabled = true,
+			box = true,
 			boxColor = { Color3.new(0,1,0), 1 },
 			boxOutline = true,
 			boxOutlineColor = { Color3.new(), 1 },
@@ -736,7 +736,7 @@ function EspInterface.getHealth(player)
 end
 
 task.spawn(function ()
-    while true do task.wait(1)
+    while true do task.wait(3)
         if Rayfield ~= nil then
             if Rayfield.Name == "Rayfield" then
 
