@@ -26,7 +26,12 @@ for i,v in pairs(game:GetService("CoreGui"):GetChildren()) do
         EnviromnetCoreUi = v
     end
 end
-local Rayfield = EnviromnetCoreUi.Rayfield or nil
+local Rayfield
+if EnviromnetCoreUi:FindFirstChild("Rayfield") then
+    Rayfield = EnviromnetCoreUi:FindFirstChild("Rayfield")
+else
+    Rayfield = nil
+end
 
 
 -- methods
