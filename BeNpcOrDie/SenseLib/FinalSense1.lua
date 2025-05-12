@@ -27,7 +27,7 @@ for i,v in pairs(game:GetService("CoreGui"):GetChildren()) do
     end
 end
 local Rayfield
-if EnviromnetCoreUi:FindFirstChild("Rayfield") then
+if EnviromnetCoreUi and EnviromnetCoreUi:FindFirstChild("Rayfield") then
     Rayfield = EnviromnetCoreUi:FindFirstChild("Rayfield")
 else
     Rayfield = nil
