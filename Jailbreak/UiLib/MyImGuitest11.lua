@@ -726,7 +726,7 @@ do -- Load items
     DropdownWindow.SliceScale = 0.050
 
     Frame_6.Parent = DropdownWindow
-    Frame_6.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+    Frame_6.BackgroundColor3 = Color3.fromRGB(255, 133, 162)
     Frame_6.BorderSizePixel = 0
     Frame_6.Position = UDim2.new(0, 0, 1, -10)
     Frame_6.Size = UDim2.new(1, 0, 0, 10)
