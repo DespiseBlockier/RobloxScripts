@@ -257,13 +257,13 @@ do -- Load items
     Content.Position = UDim2.new(0, 0, 1, 0)
     Content.Size = UDim2.new(1, 0, 0, 200)
     Content.Image = "rbxassetid://3570695787"
-    Content.ImageColor3 = Color3.fromRGB(21, 22, 23)
+    Content.ImageColor3 = Color3.fromRGB(54, 36, 52)
     Content.ScaleType = Enum.ScaleType.Slice
     Content.SliceCenter = Rect.new(100, 100, 100, 100)
     Content.SliceScale = 0.050
 
     Frame_3.Parent = Content
-    Frame_3.BackgroundColor3 = Color3.fromRGB(21, 22, 23)
+    Frame_3.BackgroundColor3 = Color3.fromRGB(54, 36, 52)
     Frame_3.BorderSizePixel = 0
     Frame_3.Size = UDim2.new(1, 0, 0, 10)
 
@@ -788,7 +788,7 @@ do -- Load items
     Content_2.Position = UDim2.new(0, 0, 1, 0)
     Content_2.Size = UDim2.new(1, 0, 0, 178)
     Content_2.Image = "rbxassetid://3570695787"
-    Content_2.ImageColor3 = Color3.fromRGB(21, 22, 23)
+    Content_2.ImageColor3 = Color3.fromRGB(54, 36, 52)
     Content_2.ScaleType = Enum.ScaleType.Slice
     Content_2.SliceCenter = Rect.new(100, 100, 100, 100)
     Content_2.SliceScale = 0.050
@@ -796,7 +796,7 @@ do -- Load items
     Items_4.Name = "Items"
     Items_4.Parent = Content_2
     Items_4.Active = true
-    Items_4.BackgroundColor3 = Color3.fromRGB(21, 22, 23)
+    Items_4.BackgroundColor3 = Color3.fromRGB(54, 36, 52)
     Items_4.BorderSizePixel = 0
     Items_4.Position = UDim2.new(0, 10, 0, 30)
     Items_4.Size = UDim2.new(1, -20, 1, -60)
@@ -970,7 +970,7 @@ do -- Load items
     Content_3.Position = UDim2.new(0, 0, 1, 0)
     Content_3.Size = UDim2.new(1, 0, 0, 178)
     Content_3.Image = "rbxassetid://3570695787"
-    Content_3.ImageColor3 = Color3.fromRGB(21, 22, 23)
+    Content_3.ImageColor3 = Color3.fromRGB(54, 36, 52)
     Content_3.ScaleType = Enum.ScaleType.Slice
     Content_3.SliceCenter = Rect.new(100, 100, 100, 100)
     Content_3.SliceScale = 0.050
