@@ -5,7 +5,9 @@
         https://v3rmillion.net/member.php?action=profile&uid=947830
         Singularity#5490
 
-        Modified by @dblockier
+    Modified by @dblockier
+    switched to merriweather font
+    follows a pink color theme
 --]]
 
 repeat wait() until game:GetService("Players").LocalPlayer
