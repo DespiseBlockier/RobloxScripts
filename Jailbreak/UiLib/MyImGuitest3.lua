@@ -1072,7 +1072,7 @@ do -- Load items
     Inner_3.Position = UDim2.new(0, 2, 0, 2)
     Inner_3.Size = UDim2.new(1, -4, 1, -4)
     Inner_3.Image = "rbxassetid://3570695787"
-    Inner_3.ImageColor3 = Color3.fromRGB(32, 59, 97)
+    Inner_3.ImageColor3 = Color3.fromRGB(25, 228, 116)
     Inner_3.ScaleType = Enum.ScaleType.Slice
     Inner_3.SliceCenter = Rect.new(100, 100, 100, 100)
     Inner_3.SliceScale = 0.050
@@ -2101,7 +2101,7 @@ local library library = {
                             for i, v in next, dropdownObjects do
                                 v.selected = false
                                 resize(v.object, { TextColor3 = Color3.fromRGB(178, 178, 178) }, 0.1)
-                                resize(v.object:GetChildren()[1], { ImageColor3 = Color3.fromRGB(37, 221, 37) }, 0.1)
+                                resize(v.object:GetChildren()[1], { ImageColor3 = Color3.fromRGB(42, 46, 42) }, 0.1)
                             end
                             dropdownObjects[name].selected = true
                             resize(dropdownOption, { TextColor3 = Color3.new(1, 1, 1) }, 0.1)
