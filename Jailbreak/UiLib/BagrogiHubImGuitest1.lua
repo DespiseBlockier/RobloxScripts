@@ -2257,6 +2257,18 @@ library = {
 							rawset(dropdownObject, name, nil)
 						end
 
+						function dropdownObject.Remove()
+							if rawget(dropdownObject, name) then
+								inner:FindFirstChild("Value").Text = "[...]"
+								dropdownWindow:FindFirstChild("Content"):FindFirstChild("Selected").Text = "[...]"
+							end
+							self.selected = nil
+							dropdownOption:Destroy()
+							table.clear(dropdownObject)
+							rawset(dropdownObject, name, nil)
+							rawset(dropdownObjects, name, nil)
+						end
+
 						return dropdownObject
 					end
 
