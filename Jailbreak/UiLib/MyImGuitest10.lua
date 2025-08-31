@@ -720,7 +720,7 @@ do -- Load items
     DropdownWindow.Size = UDim2.new(0, 200, 0, 22)
     DropdownWindow.ZIndex = 4
     DropdownWindow.Image = "rbxassetid://3570695787"
-    DropdownWindow.ImageColor3 = Color3.fromRGB(10, 10, 10)
+    DropdownWindow.ImageColor3 = Color3.fromRGB(255, 133, 162)
     DropdownWindow.ScaleType = Enum.ScaleType.Slice
     DropdownWindow.SliceCenter = Rect.new(100, 100, 100, 100)
     DropdownWindow.SliceScale = 0.050
@@ -802,6 +802,7 @@ do -- Load items
     Items_4.Size = UDim2.new(1, -20, 1, -60)
     Items_4.CanvasSize = UDim2.new(0, 0, 0, 0)
     Items_4.ScrollBarThickness = 6
+    Items_4.ScrollBarImageColor3 = Color3.fromRGB(255, 133, 162)
 
     UIListLayout_5.Parent = Items_4
     UIListLayout_5.SortOrder = Enum.SortOrder.LayoutOrder
@@ -820,7 +821,7 @@ do -- Load items
     Outer_2.BackgroundTransparency = 1.000
     Outer_2.Size = UDim2.new(1, 0, 1, 0)
     Outer_2.Image = "rbxassetid://3570695787"
-    Outer_2.ImageColor3 = Color3.fromRGB(59, 59, 68)
+    Outer_2.ImageColor3 = Color3.fromRGB(97, 59, 80)
     Outer_2.ScaleType = Enum.ScaleType.Slice
     Outer_2.SliceCenter = Rect.new(100, 100, 100, 100)
     Outer_2.SliceScale = 0.050
@@ -1493,7 +1494,7 @@ local library library = {
                 end
             end
 
-            items.ScrollBarImageColor3 = Color3.new()
+            items.ScrollBarImageColor3 = Color3.fromRGB(255, 133, 162)
             items.ChildAdded:Connect(updateCanvas)
             items.ChildRemoved:Connect(updateCanvas)
 
@@ -2072,7 +2073,7 @@ local library library = {
                         end
                     end
 
-                    dropdownItems.ScrollBarImageColor3 = Color3.new()
+                    dropdownItems.ScrollBarImageColor3 = Color3.fromRGB(255, 133, 162)
                     dropdownItems.ChildAdded:Connect(updateCanvas)
                     dropdownItems.ChildRemoved:Connect(updateCanvas)
 
