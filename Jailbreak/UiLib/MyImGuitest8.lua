@@ -340,7 +340,7 @@ do -- Load items
     UIListLayout_3.Padding = UDim.new(0, 15)
 
     Frame_4.Parent = Tabs
-    Frame_4.BackgroundColor3 = Color3.fromRGB(151, 78, 95)
+    Frame_4.BackgroundColor3 = Color3.fromRGB(78, 37, 46)
     Frame_4.BorderSizePixel = 0
     Frame_4.Position = UDim2.new(0, 0, 1, -2)
     Frame_4.Size = UDim2.new(1, 0, 0, 2)
