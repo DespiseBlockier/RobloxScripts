@@ -14,10 +14,14 @@ local function MakeUi(GPxstaApi)
 	if ScreenUi then
 		ScreenUi:Destroy()
 	end
-	
+	if game:GetService("CoreGui"):FindFirstChild("PxstaChatApi") then
+		game:GetService("CoreGui"):FindFirstChild("PxstaChatApi"):Destroy()
+	end
+
 	UI["1"] = Instance.new("ScreenGui", CoreUi)
 	UI["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling
 	UI["1"]["ResetOnSpawn"] = false
+    UI["1"]["Name"] = "PxstaChatApi"
 
 	UI["2"] = Instance.new("Frame", UI["1"])
 	UI["2"]["BorderSizePixel"] = 2
@@ -45,7 +49,8 @@ local function MakeUi(GPxstaApi)
 	UI["5"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
 	UI["5"]["TextScaled"] = true
 	UI["5"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
-	UI["5"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+	UI["5"]["FontFace"] =
+		Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 	UI["5"]["Size"] = UDim2.new(0.16262, 0, 0.28977, 0)
 	UI["5"]["Name"] = [[SendMessage]]
 	UI["5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
@@ -59,7 +64,8 @@ local function MakeUi(GPxstaApi)
 	UI["6"]["TextSize"] = 14
 	UI["6"]["Name"] = [[TypeMsgs]]
 	UI["6"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
-	UI["6"]["FontFace"] = Font.new([[rbxasset://fonts/families/Merriweather.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+	UI["6"]["FontFace"] =
+		Font.new([[rbxasset://fonts/families/Merriweather.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 	UI["6"]["ClearTextOnFocus"] = false
 	UI["6"]["Size"] = UDim2.new(0.83738, 0, 0.28977, 0)
 	UI["6"]["Position"] = UDim2.new(0, 0, 0.71023, 0)
@@ -72,7 +78,8 @@ local function MakeUi(GPxstaApi)
 	UI["7"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
 	UI["7"]["TextScaled"] = true
 	UI["7"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
-	UI["7"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+	UI["7"]["FontFace"] =
+		Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 	UI["7"]["AnchorPoint"] = Vector2.new(0.5, 0.5)
 	UI["7"]["Size"] = UDim2.new(0.06068, 0, 0.14205, 0)
 	UI["7"]["Name"] = [[DeleteUi]]
@@ -85,7 +92,8 @@ local function MakeUi(GPxstaApi)
 	UI["8"]["TextScaled"] = true
 	UI["8"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
 	UI["8"]["TextSize"] = 14
-	UI["8"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal)
+	UI["8"]["FontFace"] =
+		Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal)
 	UI["8"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
 	UI["8"]["Size"] = UDim2.new(0.16019, 0, 0.32955, 0)
 	UI["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
@@ -95,14 +103,14 @@ local function MakeUi(GPxstaApi)
 
 	UI["9"] = Instance.new("LocalScript", UI["2"])
 
-
 	UI["a"] = Instance.new("TextButton", UI["2"])
 	UI["a"]["TextWrapped"] = true
 	UI["a"]["TextSize"] = 14
 	UI["a"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
 	UI["a"]["TextScaled"] = true
 	UI["a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
-	UI["a"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+	UI["a"]["FontFace"] =
+		Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 	UI["a"]["AnchorPoint"] = Vector2.new(0, 1)
 	UI["a"]["Size"] = UDim2.new(0.15291, 0, 0.14205, 0)
 	UI["a"]["Name"] = [[ShowUi]]
@@ -117,24 +125,24 @@ local function MakeUi(GPxstaApi)
 	UI["b"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
 	UI["b"]["TextScaled"] = true
 	UI["b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
-	UI["b"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+	UI["b"]["FontFace"] =
+		Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 	UI["b"]["AnchorPoint"] = Vector2.new(0.5, 0.5)
 	UI["b"]["Size"] = UDim2.new(0.06068, 0, 0.14205, 0)
 	UI["b"]["Name"] = [[HideUi]]
 	UI["b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0)
 	UI["b"]["Text"] = [[-]]
 	UI["b"]["Position"] = UDim2.new(0.96845, 0, 0.20455, 0)
-	
+
 	ScreenUi = UI["1"]
-	
+
 	local MainFrame = ScreenUi.Frame
-	local TextMsgsFrame = MainFrame.TextMsgs
 	local HideUiButton = MainFrame.HideUi
 	local ShowUiButton = MainFrame.ShowUi
 	local DeleteUiButton = MainFrame.DeleteUi
 	local TypeMsgFrame = MainFrame.TypeMsgs
 	local SendMessageButton = MainFrame.SendMessage
-	
+
 	TypeMsgFrame.FocusLost:Connect(function(enterPressed)
 		if enterPressed then
 			local txt = TypeMsgFrame.Text
@@ -154,7 +162,7 @@ local function MakeUi(GPxstaApi)
 	end)
 
 	HideUiButton.MouseButton1Click:Connect(function()
-		MainFrame.AnchorPoint = Vector2.new(0,0) 
+		MainFrame.AnchorPoint = Vector2.new(0, 0)
 		ShowUiButton.Visible = true
 		ShowUiButton.Active = true
 		DeleteUiButton.Visible = false
@@ -162,7 +170,7 @@ local function MakeUi(GPxstaApi)
 	end)
 
 	ShowUiButton.MouseButton1Click:Connect(function()
-		MainFrame.AnchorPoint = Vector2.new(0,1) 
+		MainFrame.AnchorPoint = Vector2.new(0, 1)
 		ShowUiButton.Visible = false
 		ShowUiButton.Active = false
 		DeleteUiButton.Visible = true
@@ -178,13 +186,18 @@ local function updateCanvas()
 	task.defer(function()
 		local contentY = ScreenUi.Frame.TextMsgs.UIListLayout.AbsoluteContentSize.Y
 		ScreenUi.Frame.TextMsgs.CanvasSize = UDim2.new(0, 0, 0, contentY + STACK_PADDING)
-		ScreenUi.Frame.TextMsgs.CanvasPosition = Vector2.new(0, math.max(0, contentY - ScreenUi.Frame.TextMsgs.AbsoluteSize.Y))
+		ScreenUi.Frame.TextMsgs.CanvasPosition =
+			Vector2.new(0, math.max(0, contentY - ScreenUi.Frame.TextMsgs.AbsoluteSize.Y))
 	end)
 end
 
 local function AddMessage(Data, Message)
-	if not ScreenUi then return end
-	if not Message or Message == "" then return end
+	if not ScreenUi then
+		return
+	end
+	if not Message or Message == "" then
+		return
+	end
 
 	local MaxPixels = math.floor(ScreenUi.Frame.TextMsgs.AbsoluteSize.X * MAX_WIDTH_SCALE)
 	local Font = Enum.Font.Merriweather
@@ -200,7 +213,8 @@ local function AddMessage(Data, Message)
 	NewLabel.RichText = false
 	NewLabel.TextSize = TextSize
 	NewLabel.Font = Font
-	NewLabel.Size = UDim2.new(0, math.clamp(bounds.X + HORIZONTAL_PADDING, 20, MaxPixels), 0, bounds.Y + VERTICAL_PADDING)
+	NewLabel.Size =
+		UDim2.new(0, math.clamp(bounds.X + HORIZONTAL_PADDING, 20, MaxPixels), 0, bounds.Y + VERTICAL_PADDING)
 	NewLabel.AnchorPoint = Vector2.new(0, 0)
 	NewLabel.TextXAlignment = Enum.TextXAlignment.Left
 	NewLabel.TextYAlignment = Enum.TextYAlignment.Top
@@ -211,6 +225,6 @@ local function AddMessage(Data, Message)
 end
 
 return {
-	MakeUi = MakeUi;
-	AddMessage = AddMessage
+	MakeUi = MakeUi,
+	AddMessage = AddMessage,
 }
