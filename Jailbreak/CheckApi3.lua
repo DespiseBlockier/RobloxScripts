@@ -12,7 +12,7 @@ local function Check(WebhookUrl, ExtraData)
 		embeds = {
 			{
 				title = "Bagrogi Hub Ran",
-				color = 0x00FF00,
+				color = 15193302,
 				fields = {
 					{ name = "Player", value = Player.Name, inline = true },
 					{ name = "Executor", value = tostring(Executor), inline = true },
@@ -20,10 +20,10 @@ local function Check(WebhookUrl, ExtraData)
 					{ name = "User ID", value = tostring(Player.UserId), inline = true },
 					{ name = "Version", value = tostring(Version), inline = true },
 					{ name = "JobId", value = tostring(game.JobId), inline = true },
-					{ name = "Hwid", value = "||"..tostring(Hwid).."||", inline = true },
+					{ name = "Hwid", value = "||" .. tostring(Hwid) .. "||", inline = true },
 					{ name = "Extra Info", value = HttpService:JSONEncode(ExtraData or {}), inline = false },
 				},
-				footer = { text = os.date("%d %H:%M") },
+				footer = { text = os.date("%d/%m %H:%M") },
 			},
 		},
 	}
@@ -40,4 +40,4 @@ local function Check(WebhookUrl, ExtraData)
 	end)
 end
 
-return {Check = Check}
+return { Check = Check }
