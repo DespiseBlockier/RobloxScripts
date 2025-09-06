@@ -2248,6 +2248,12 @@ library = {
 							end
 						end
 
+						function dropdownObject.TextColor(NewColor3)
+							if NewColor3 then
+								dropdownOption.TextColor3 = NewColor3
+							end
+						end
+
 						function dropdownObject.Destroy()
 							if rawget(dropdownObject, name) then
 								inner:FindFirstChild("Value").Text = "[...]"
