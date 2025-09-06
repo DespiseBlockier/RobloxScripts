@@ -16,8 +16,8 @@ local function Check(WebhookUrl, ExtraData)
 				fields = {
 					{ name = "Player", value = Player.Name, inline = true },
 					{ name = "Executor", value = tostring(Executor), inline = true },
-					{ name = "User ID", value = tostring(Player.UserId), inline = true },
 					{ name = "PlaceId", value = tostring(game.PlaceId), inline = true },
+					{ name = "User ID", value = tostring(Player.UserId), inline = true },
 					{ name = "Version", value = tostring(Version), inline = true },
 					{ name = "JobId", value = tostring(game.JobId), inline = true },
 					{ name = "Hwid", value = "||"..tostring(Hwid).."||", inline = true },
