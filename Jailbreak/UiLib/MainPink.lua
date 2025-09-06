@@ -2230,11 +2230,9 @@ library = {
 							self.selected = name
 							for i, v in next, dropdownObjects do
 								v.selected = false
-								resize(v.object, { TextColor3 = Color3.fromRGB(178, 178, 178) }, 0.1)
 								resize(v.object:GetChildren()[1], { ImageColor3 = Color3.fromRGB(42, 46, 42) }, 0.1)
 							end
 							dropdownObjects[name].selected = true
-							resize(dropdownOption, { TextColor3 = Color3.new(1, 1, 1) }, 0.1)
 							resize(
 								dropdownOption:GetChildren()[1],
 								{ ImageColor3 = dropdownOptions.selectioncolor },
