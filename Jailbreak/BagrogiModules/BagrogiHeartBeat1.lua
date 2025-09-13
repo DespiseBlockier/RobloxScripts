@@ -6,6 +6,7 @@ local Listeners = {}
 function BagrogiHeartBeat.Connect(Func)
 	if type(Func) == "function" then
 		table.insert(Listeners, Func)
+		return Func
 	else
 		warn("BagrogiHeartBeat: Attempted to connect a non-function.")
 	end
