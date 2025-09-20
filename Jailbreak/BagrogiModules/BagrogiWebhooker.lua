@@ -82,11 +82,11 @@ end
 
 local function New(WebhookUrl)
 	assert(type(WebhookUrl) == "string" and WebhookUrl:match("^https?://"), "Invalid webhook URL")
-	local Self = setmetatable({}, BagrogiWebhooker)
-	Self.Url = WebhookUrl
-	Self.MaxRetries = BagrogiWebhooker.DefaultRetries
-	Self.Timeout = BagrogiWebhooker.DefaultTimeout
-	return Self
+	local self = setmetatable({}, BagrogiWebhooker)
+	self.Url = WebhookUrl
+	self.MaxRetries = BagrogiWebhooker.DefaultRetries
+	self.Timeout = BagrogiWebhooker.DefaultTimeout
+	return self
 end
 
 local function CreateEmbed(Title, Description, Color, Fields, Footer, Timestamp)
