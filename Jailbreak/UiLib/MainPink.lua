@@ -13,8 +13,8 @@
 repeat
 	task.wait()
 until game:GetService("Players").LocalPlayer
-if game:GetService("CoreGui"):FindFirstChild("imgui2") then
-	game:GetService("CoreGui"):FindFirstChild("imgui2"):Destroy()
+if game:GetService("CoreGui"):FindFirstChild("BagrogiImGui") then
+	game:GetService("CoreGui"):FindFirstChild("BagrogiImGui"):Destroy()
 end
 
 if getgenv().Connections and getgenv().Connections["ClearConnectionsFunction"] then
@@ -123,7 +123,7 @@ do -- Load items
 	local Text_4 = Instance.new("TextLabel")
 	local Cache_2 = Instance.new("Frame")
 
-	imgui2.Name = "imgui2"
+	imgui2.Name = "BagrogiImGui"
 	imgui2.Parent = game:GetService("CoreGui")
 
 	Presets.Name = "Presets"
@@ -1130,7 +1130,7 @@ end
 local RunService = game:GetService("RunService")
 local UserInputService = game:GetService("UserInputService")
 local CoreGui = game:GetService("CoreGui")
-local ScreenGui = CoreGui:FindFirstChild("imgui2")
+local ScreenGui = CoreGui:FindFirstChild("BagrogiImGui")
 local Presets = ScreenGui:FindFirstChild("Presets")
 local ScreenGuiCache = ScreenGui:FindFirstChild("Cache")
 
@@ -1309,18 +1309,14 @@ do
 						Vector2.new(getMouse().X - frame.AbsolutePosition.X, getMouse().Y - frame.AbsolutePosition.Y)
 					while mouse.held do
 						pcall(function()
-							resize(
-								frame,
-								{
-									Position = UDim2.new(
-										0,
-										getMouse().X - objectPosition.X + (frame.Size.X.Offset * frame.AnchorPoint.X),
-										0,
-										getMouse().Y - objectPosition.Y + (frame.Size.Y.Offset * frame.AnchorPoint.Y)
-									),
-								},
-								0.1
-							)
+							resize(frame, {
+								Position = UDim2.new(
+									0,
+									getMouse().X - objectPosition.X + (frame.Size.X.Offset * frame.AnchorPoint.X),
+									0,
+									getMouse().Y - objectPosition.Y + (frame.Size.Y.Offset * frame.AnchorPoint.Y)
+								),
+							}, 0.1)
 						end)
 						RunService.Heartbeat:Wait()
 					end
@@ -2369,21 +2365,18 @@ library = {
 									updateTextBox()
 								end
 								if betweenOpenInterval(keycode.Value, 48, 57) then -- 0-9
-									local name = rawget(
-										{
-											Zero = 0,
-											One = 1,
-											Two = 2,
-											Three = 3,
-											Four = 4,
-											Five = 5,
-											Six = 6,
-											Seven = 7,
-											Eight = 8,
-											Nine = 9,
-										},
-										keycode.Name
-									)
+									local name = rawget({
+										Zero = 0,
+										One = 1,
+										Two = 2,
+										Three = 3,
+										Four = 4,
+										Five = 5,
+										Six = 6,
+										Seven = 7,
+										Eight = 8,
+										Nine = 9,
+									}, keycode.Name)
 									-- if shift then
 									--     name = rawget({ "=", "!", '"', "#", "¤", "%", "&", "/", "(", ")" }, name + 1)
 									-- end
