@@ -1,6 +1,9 @@
 local TweenService = game:GetService("TweenService")
 local CoreGui = gethui() or game:GetService("CoreGui")
 
+local MyRepo = "https://raw.githubusercontent.com/DespiseBlockier/RobloxScripts/refs/heads/main/Jailbreak"
+local BagrogiSounds = loadstring(game:HttpGet(MyRepo .. "/BagrogiModules/BagrogiSounds.lua"))()
+
 local BagrogiNotifier = {}
 BagrogiNotifier.__index = BagrogiNotifier
 
@@ -122,7 +125,9 @@ function BagrogiNotifier:Destroy()
 		TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.In),
 		{ Size = UDim2.fromScale(0, 0) }
 	)
+	
 	HideTween:Play()
+	BagrogiSounds.PlaySound("UiPop2")
 
 	HideTween.Completed:Once(function()
 		if self.Connection then
@@ -156,7 +161,9 @@ function BagrogiNotifier:Send(Time)
 		TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 		{ Size = CurrentSize }
 	)
+
 	AppearTween:Play()
+	BagrogiSounds.PlaySound("UiPop")
 
 	self.Connection = Gui.Close.MouseButton1Click:Connect(function()
 		self:Destroy()
