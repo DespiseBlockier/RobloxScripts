@@ -6,49 +6,10 @@ BagrogiWebhooker.__index = BagrogiWebhooker
 BagrogiWebhooker.DefaultRetries = 3
 BagrogiWebhooker.DefaultTimeout = 10
 
-local function NormalizeResponse(Response)
-	if not Response then
-		return { Success = false, StatusCode = 0, Body = nil, Headers = {} }
-	end
-
-	if Response.Success ~= nil and Response.StatusCode ~= nil then
-		return {
-			Success = Response.Success,
-			StatusCode = Response.StatusCode,
-			Body = Response.Body,
-			Headers = Response.Headers or {},
-		}
-	end
-
-	if Response.success ~= nil and Response.status ~= nil then
-		return {
-			Success = Response.success,
-			StatusCode = Response.status,
-			Body = Response.body or Response.Body,
-			Headers = Response.headers or Response.Headers or {},
-		}
-	end
-
-	if Response.Status then
-		return {
-			Success = (Response.Status >= 200 and Response.Status < 300),
-			StatusCode = Response.Status,
-			Body = Response.Body or Response.body,
-			Headers = Response.Headers or Response.headers or {},
-		}
-	end
-
-	local Sc = Response.StatusCode or Response.status or Response.Status or 0
-	local Body = Response.Body or Response.body or tostring(Response)
-	return {
-		Success = (Sc >= 200 and Sc < 300),
-		StatusCode = Sc,
-		Body = Body,
-		Headers = Response.Headers or Response.headers or {},
-	}
-end
 
 local Request = http and http.request or http_request or request
+
+
 
 local function TryRequest(Url, BodyJson)
 	local ReqTable = {
@@ -61,12 +22,22 @@ local function TryRequest(Url, BodyJson)
 		Body = BodyJson,
 	}
 
+	if la_exists then
+		local Ok, Res = pcall(function()
+			la_send_webhook(Url, BodyJson)
+		end)
+
+		if not Ok then
+			warn("😭 ", Res)
+		end
+		return
+	end
+
 	if Request then
 		local Ok, Res = pcall(Request, ReqTable)
 		if not Ok then
-			return NormalizeResponse(nil)
+			warn("Error making request:", Res)
 		end
-		return NormalizeResponse(Res)
 	else
 		warn("No Normal Request Function????")
 	end
