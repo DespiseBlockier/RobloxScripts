@@ -1,7 +1,7 @@
 local Workspace = game:GetService("Workspace")
 
 local Repo = "https://github.com/DespiseBlockier/RobloxScripts/raw/refs/heads/main/Sounds/"
-BagrogiSoundsFolder = BagrogiSoundsFolder
+BagrogiSoundsFolder = BagrogiSoundsFolder or "Bagrogi/Default/Sounds/"
 local FileLocation = BagrogiSoundsFolder or nil
 
 local function FolderCheck(Path)
